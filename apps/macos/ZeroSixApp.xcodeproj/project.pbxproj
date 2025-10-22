@@ -1,0 +1,365 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0000010000000000000001 /* ZeroSixAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F1DD32A93890800A39C1A /* ZeroSixAppApp.swift */; };
+		AA0000020000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F1DD42A93890800A39C1A /* ContentView.swift */; };
+		AA0000030000000000000003 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F1DD52A93890800A39C1A /* SettingsStore.swift */; };
+		AA0000040000000000000004 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F1DD62A93890800A39C1A /* Models.swift */; };
+		AA0000050000000000000005 /* ChromeIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F1DD72A93890800A39C1A /* ChromeIntegration.swift */; };
+		AA0000060000000000000006 /* SiteSettingsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1F1DD82A93890800A39C1A /* SiteSettingsCard.swift */; };
+		AA0000080000000000000008 /* ChromeInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000C000000000000000C /* ChromeInstaller.swift */; };
+		AA0000090000000000000009 /* zero-six-extension.zip in Resources */ = {isa = PBXBuildFile; fileRef = AA00000D000000000000000D /* zero-six-extension.zip */; };
+		AA00000A000000000000000A /* ZeroSixHost.swift.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA00000E000000000000000E /* ZeroSixHost.swift.txt */; };
+		AA0000070000000000000007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A1F1DDA2A93890800A39C1A /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3A1F1DD02A93890800A39C1A /* ZeroSixApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZeroSixApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A1F1DD32A93890800A39C1A /* ZeroSixAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroSixAppApp.swift; sourceTree = "<group>"; };
+		3A1F1DD42A93890800A39C1A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3A1F1DD52A93890800A39C1A /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		3A1F1DD62A93890800A39C1A /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		3A1F1DD72A93890800A39C1A /* ChromeIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeIntegration.swift; sourceTree = "<group>"; };
+		3A1F1DD82A93890800A39C1A /* SiteSettingsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteSettingsCard.swift; sourceTree = "<group>"; };
+		3A1F1DD92A93890800A39C1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A1F1DDA2A93890800A39C1A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA00000C000000000000000C /* ChromeInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeInstaller.swift; sourceTree = "<group>"; };
+		AA00000D000000000000000D /* zero-six-extension.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "zero-six-extension.zip"; sourceTree = "<group>"; };
+		AA00000E000000000000000E /* ZeroSixHost.swift.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZeroSixHost.swift.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A1F1DCE2A93890800A39C1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A1F1DCF2A93890800A39C1A = {
+			isa = PBXGroup;
+			children = (
+				3A1F1DD12A93890800A39C1A /* ZeroSixApp */,
+				3A1F1DD22A93890800A39C1A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A1F1DD12A93890800A39C1A /* ZeroSixApp */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F1DD32A93890800A39C1A /* ZeroSixAppApp.swift */,
+				3A1F1DD42A93890800A39C1A /* ContentView.swift */,
+				3A1F1DD52A93890800A39C1A /* SettingsStore.swift */,
+				3A1F1DD62A93890800A39C1A /* Models.swift */,
+				3A1F1DD72A93890800A39C1A /* ChromeIntegration.swift */,
+				3A1F1DD82A93890800A39C1A /* SiteSettingsCard.swift */,
+				AA00000C000000000000000C /* ChromeInstaller.swift */,
+				3A1F1DDA2A93890800A39C1A /* Assets.xcassets */,
+				AA00000F000000000000000F /* Resources */,
+				3A1F1DD92A93890800A39C1A /* Info.plist */,
+		);
+			path = ZeroSixApp;
+			sourceTree = "<group>";
+		};
+		3A1F1DD22A93890800A39C1A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A1F1DD02A93890800A39C1A /* ZeroSixApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA00000F000000000000000F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000100000000000000010 /* ChromeExtension */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AA0000100000000000000010 /* ChromeExtension */ = {
+			isa = PBXGroup;
+			children = (
+				AA00000D000000000000000D /* zero-six-extension.zip */,
+				AA00000E000000000000000E /* ZeroSixHost.swift.txt */,
+			);
+			path = ChromeExtension;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A1F1DDC2A93890800A39C1A /* ZeroSixApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A1F1DE32A93890800A39C1A /* Build configuration list for PBXNativeTarget "ZeroSixApp" */;
+			buildPhases = (
+				3A1F1DCB2A93890800A39C1A /* Sources */,
+				3A1F1DCE2A93890800A39C1A /* Frameworks */,
+				3A1F1DED2A93890900A39C1A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZeroSixApp;
+			productName = ZeroSixApp;
+			productReference = 3A1F1DD02A93890800A39C1A /* ZeroSixApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A1F1DCA2A93890800A39C1A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					3A1F1DDC2A93890800A39C1A = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 3A1F1DCD2A93890800A39C1A /* Build configuration list for PBXProject "ZeroSixApp" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			mainGroup = 3A1F1DCF2A93890800A39C1A;
+			productRefGroup = 3A1F1DD22A93890800A39C1A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A1F1DDC2A93890800A39C1A /* ZeroSixApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A1F1DED2A93890900A39C1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000070000000000000007 /* Assets.xcassets in Resources */,
+				AA0000090000000000000009 /* zero-six-extension.zip in Resources */,
+				AA00000A000000000000000A /* ZeroSixHost.swift.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A1F1DCB2A93890800A39C1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000010000000000000001 /* ZeroSixAppApp.swift in Sources */,
+				AA0000020000000000000002 /* ContentView.swift in Sources */,
+				AA0000030000000000000003 /* SettingsStore.swift in Sources */,
+				AA0000040000000000000004 /* Models.swift in Sources */,
+				AA0000050000000000000005 /* ChromeIntegration.swift in Sources */,
+				AA0000060000000000000006 /* SiteSettingsCard.swift in Sources */,
+				AA0000080000000000000008 /* ChromeInstaller.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3A1F1DE02A93890800A39C1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		3A1F1DE12A93890800A39C1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		3A1F1DE42A93890800A39C1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ZeroSixApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ZeroSixApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.zerosix.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A1F1DE52A93890800A39C1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"ZeroSixApp/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = ZeroSixApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.zerosix.mac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A1F1DCD2A93890800A39C1A /* Build configuration list for PBXProject "ZeroSixApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A1F1DE02A93890800A39C1A /* Debug */,
+				3A1F1DE12A93890800A39C1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3A1F1DE32A93890800A39C1A /* Build configuration list for PBXNativeTarget "ZeroSixApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A1F1DE42A93890800A39C1A /* Debug */,
+				3A1F1DE52A93890800A39C1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A1F1DCA2A93890800A39C1A /* Project object */;
+}

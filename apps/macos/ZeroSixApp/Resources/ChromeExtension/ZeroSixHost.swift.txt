@@ -1,0 +1,177 @@
+#!/usr/bin/env swift
+import Foundation
+
+// Lightweight Swift script used by Chrome's native messaging bridge.
+
+struct NativeMessage: Codable {
+    let type: String
+    let settings: [String: AnyCodable]?
+}
+
+struct NativeResponse: Codable {
+    let type: String
+    let success: Bool
+    let settings: [String: AnyCodable]?
+    let message: String?
+}
+
+struct AnyCodable: Codable {
+    let value: Any
+
+    init(_ value: Any) {
+        self.value = value
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        if let bool = try? container.decode(Bool.self) {
+            value = bool
+        } else if let int = try? container.decode(Int.self) {
+            value = int
+        } else if let double = try? container.decode(Double.self) {
+            value = double
+        } else if let string = try? container.decode(String.self) {
+            value = string
+        } else if let array = try? container.decode([AnyCodable].self) {
+            value = array.map { $0.value }
+        } else if let dict = try? container.decode([String: AnyCodable].self) {
+            value = dict.mapValues { $0.value }
+        } else if container.decodeNil() {
+            value = NSNull()
+        } else {
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Unsupported JSON type")
+        }
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        switch value {
+        case let bool as Bool:
+            try container.encode(bool)
+        case let int as Int:
+            try container.encode(int)
+        case let double as Double:
+            try container.encode(double)
+        case let string as String:
+            try container.encode(string)
+        case let array as [Any]:
+            try container.encode(array.map { AnyCodable($0) })
+        case let dict as [String: Any]:
+            try container.encode(dict.mapValues { AnyCodable($0) })
+        case _ as NSNull:
+            try container.encodeNil()
+        default:
+            throw EncodingError.invalidValue(value, EncodingError.Context(codingPath: encoder.codingPath, debugDescription: "Unsupported JSON type"))
+        }
+    }
+}
+
+let settingsPath = (NSHomeDirectory() as NSString).appendingPathComponent("Library/Application Support/ZeroSix/settings.json")
+
+let defaultSettings: [String: Any] = [
+    "version": 1,
+    "facebook": [
+        "enabled": true,
+        "hideNewsFeed": true,
+        "hideStories": true,
+        "hideWatch": true,
+        "hideMarketplace": false,
+        "hideNotifications": false
+    ],
+    "youtube": [
+        "enabled": true,
+        "hideHomeFeed": true,
+        "hideSidebar": true,
+        "hideComments": false,
+        "hideEndscreen": true,
+        "hideShorts": true
+    ],
+    "twitter": [
+        "enabled": true,
+        "hideHomeTimeline": true,
+        "hideTrends": true,
+        "hideWhoToFollow": true,
+        "hideNotifications": false
+    ],
+    "reddit": [
+        "enabled": true,
+        "hideHomeFeed": true,
+        "hideTrending": true,
+        "hideSidebar": false
+    ],
+    "linkedin": [
+        "enabled": true,
+        "hideFeed": true,
+        "hideNotifications": false,
+        "hideMessaging": false
+    ],
+    "instagram": [
+        "enabled": true,
+        "hideFeed": true,
+        "hideStories": true,
+        "hideExplore": true,
+        "hideReels": true
+    ]
+]
+
+func readNativeMessage() -> NativeMessage? {
+    let stdin = FileHandle.standardInput
+    guard let lengthData = try? stdin.read(upToCount: 4), lengthData.count == 4 else { return nil }
+    let length = lengthData.withUnsafeBytes { $0.load(as: UInt32.self).littleEndian }
+    guard let messageData = try? stdin.read(upToCount: Int(length)), let data = messageData else { return nil }
+    do {
+        return try JSONDecoder().decode(NativeMessage.self, from: data)
+    } catch {
+        return nil
+    }
+}
+
+func sendNativeResponse(_ response: NativeResponse) {
+    let encoder = JSONEncoder()
+    guard let data = try? encoder.encode(response) else { return }
+    var length = UInt32(data.count).littleEndian
+    let lengthData = Data(bytes: &length, count: MemoryLayout<UInt32>.size)
+    FileHandle.standardOutput.write(lengthData)
+    FileHandle.standardOutput.write(data)
+    FileHandle.standardOutput.synchronizeFile()
+}
+
+func loadSettings() -> [String: Any] {
+    let fileURL = URL(fileURLWithPath: settingsPath)
+    guard let data = try? Data(contentsOf: fileURL) else {
+        return defaultSettings
+    }
+    if let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] {
+        return json
+    }
+    return defaultSettings
+}
+
+func saveSettings(_ dictionary: [String: Any]) -> Bool {
+    let fileURL = URL(fileURLWithPath: settingsPath)
+    do {
+        let data = try JSONSerialization.data(withJSONObject: dictionary, options: [.prettyPrinted, .sortedKeys])
+        let parent = fileURL.deletingLastPathComponent()
+        try FileManager.default.createDirectory(at: parent, withIntermediateDirectories: true)
+        try data.write(to: fileURL, options: [.atomic])
+        return true
+    } catch {
+        return false
+    }
+}
+
+while let message = readNativeMessage() {
+    switch message.type {
+    case "ping":
+        sendNativeResponse(NativeResponse(type: "pong", success: true, settings: nil, message: nil))
+    case "getSettings":
+        let current = loadSettings().mapValues { AnyCodable($0) }
+        sendNativeResponse(NativeResponse(type: "settings", success: true, settings: current, message: nil))
+    case "saveSettings":
+        let payload = message.settings?.mapValues { $0.value } ?? [:]
+        let success = saveSettings(payload)
+        sendNativeResponse(NativeResponse(type: "ack", success: success, settings: nil, message: success ? nil : "Failed to write settings"))
+    default:
+        sendNativeResponse(NativeResponse(type: "error", success: false, settings: nil, message: "Unknown message type"))
+    }
+}
